@@ -13,3 +13,8 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(5000);
+
+// we can read index.html, however, we cant read style.css like this, we have to manually import it into the file, such as:
+// if url = /home/style.css
+//res.writeHead(200, { "content-type": "text/css" });
+// write(css)
