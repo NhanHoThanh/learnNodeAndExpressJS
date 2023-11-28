@@ -12,6 +12,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(session({ secret: "your-secret-key", cookie: { maxAge: 60000 } }));
 
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "methods_public/index.html"));
+});
+
 app.post("/login", (req, res) => {
   const name = req.body.name;
   if (name) {

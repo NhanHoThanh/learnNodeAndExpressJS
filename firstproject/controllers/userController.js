@@ -9,7 +9,8 @@ const getUsers = (req, res) => {
 const createUser = (req, res) => {
   const user = req.body;
   users.push({ ...user, id: uuid() });
-  console.log(`${user.username} added to the database`);
+  console.log(`${req.body.username} added to the database`);
+  res.status(201).send("success");
 };
 
 const getUser = (req, res) => {
